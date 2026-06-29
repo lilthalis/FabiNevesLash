@@ -3,242 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lash Designer Studio | Luxo & Sofisticação em São Paulo</title>
+    <meta name="description" content="Fabi Neves, Lash Artist em Granja Viana. Extensões de cílios, lash lifting e manutenção com estética premium e atendimento reservado no Pin Up Granja Viana.">
+    <title>Fabi Neves — Lash Artist | Granja Viana</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header class="main-header">
-        <div class="logo">STUDIO NOUVEAU</div>
-        <nav class="nav-menu">
-            <a href="#about">O Studio</a>
+    <header class="site-header" data-header>
+        <a class="brand" href="#top" aria-label="Fabi Neves Lash Artist">Fabi Neves</a>
+        <nav class="desktop-nav" aria-label="Navegação principal">
+            <a href="#about">Atelier</a>
             <a href="#services">Serviços</a>
             <a href="#gallery">Galeria</a>
-            <a href="#faq">Dúvidas</a>
+            <a href="#location">Localização</a>
         </nav>
-        <a href="https://wa.me/seunumero" class="btn btn-nav">Agendar</a>
-        <button class="menu-toggle" aria-label="Abrir menu">
-            <span></span>
-            <span></span>
+        <a class="header-cta" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Fabi.%20Gostaria%20de%20agendar%20uma%20experi%C3%AAncia%20de%20c%C3%ADlios." target="_blank" rel="noopener">Agendar</a>
+        <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-button>
+            <span></span><span></span>
         </button>
     </header>
 
-    <section class="hero">
-        <div class="hero-video-container">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-womans-face-close-up-with-eyelashes-41716-large.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <h1 class="fade-in">Seu olhar merece uma experiência.</h1>
-            <p class="fade-in-delayed">Especialista em extensão de cílios com atendimento personalizado em São Paulo.</p>
-            <div class="hero-buttons fade-in-delayed">
-                <a href="https://wa.me/seunumero" class="btn btn-primary">Agendar pelo WhatsApp</a>
-                <a href="#about" class="btn btn-secondary">Conheça o Studio</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about-section section-padding">
-        <div class="container about-grid">
-            <div class="about-image reveal">
-                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800" alt="Lash Designer Profissional">
-            </div>
-            <div class="about-text reveal">
-                <span class="section-subtitle">A Arte do Olhar</span>
-                <h2 class="section-title">O olhar como assinatura de elegância.</h2>
-                <p class="editorial-p">Fundado sob a premissa de que a beleza reside na precisão e na naturalidade, nosso estúdio redefine o conceito de extensão de cílios em São Paulo. Cada aplicação é uma obra de arte milimetricamente desenhada para harmonizar com suas feições.</p>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h4>Alta Costura do Olhar</h4>
-                        <p>Matérias-primas premium importadas e técnicas exclusivas inspiradas no minimalismo europeu.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Atendimento Privé</h4>
-                        <p>Um ambiente desenhado para o seu relaxamento absoluto, com total privacidade e biossegurança.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services-section section-padding">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-subtitle">Menu de Serviços</span>
-                <h2 class="section-title">Técnicas Exclusivas</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="service-icon"><i class="fa-thin fa-eye"></i></div>
-                    <h3>Fio a Fio Clássico</h3>
-                    <p class="service-desc">Elegância sutil e naturalidade extrema. Perfeito para o dia a dia da mulher contemporânea.</p>
-                    <span class="service-duration"><i class="far fa-clock"></i> 2h 00min</span>
-                    <a href="https://wa.me/seunumero" class="btn-card">Reservar Experiência</a>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon"><i class="fa-thin fa-sparkles"></i></div>
-                    <h3>Volume Brasileiro</h3>
-                    <p class="service-desc">O equilíbrio perfeito entre volume e leveza, proporcionando um olhar marcante e sofisticado.</p>
-                    <span class="service-duration"><i class="far fa-clock"></i> 2h 15min</span>
-                    <a href="https://wa.me/seunumero" class="btn-card">Reservar Experiência</a>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon"><i class="fa-thin fa-crown"></i></div>
-                    <h3>Volume Egípcio</h3>
-                    <p class="service-desc">Camadas luxuosas e densidade incomparável para um efeito marcante de alta definição.</p>
-                    <span class="service-duration"><i class="far fa-clock"></i> 2h 30min</span>
-                    <a href="https://wa.me/seunumero" class="btn-card">Reservar Experiência</a>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon"><i class="fa-thin fa-wand-magic-sparkles"></i></div>
-                    <h3>Lash Lifting Premium</h3>
-                    <p class="service-desc">Curvatura, nutrição e alinhamento dos seus próprios cílios naturais com estética minimalista.</p>
-                    <span class="service-duration"><i class="far fa-clock"></i> 1h 15min</span>
-                    <a href="https://wa.me/seunumero" class="btn-card">Reservar Experiência</a>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon"><i class="fa-thin fa-gem"></i></div>
-                    <h3>Manutenção Design</h3>
-                    <p class="service-desc">O cuidado essencial para preservar o alinhamento impecável e a saúde dos fios.</p>
-                    <span class="service-duration"><i class="far fa-clock"></i> 1h 30min</span>
-                    <a href="https://wa.me/seunumero" class="btn-card">Reservar Experiência</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="gallery-section section-padding">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-subtitle">Portfólio Editorial</span>
-                <h2 class="section-title">A Perfeição em Detalhes</h2>
-            </div>
-            <div class="masonry-gallery">
-                <div class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=600" alt="Lash Design Olhar Premium">
-                </div>
-                <div class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80&w=600" alt="Estética de Luxo">
-                </div>
-                <div class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1522337094846-8a81113522f0?auto=format&fit=crop&q=80&w=600" alt="Detalhe Extensão de Cílios">
-                </div>
-                <div class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=600" alt="Studio Minimalista">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" src="" alt="">
+    <div class="mobile-panel" data-mobile-panel>
+        <a href="#about">Atelier</a>
+        <a href="#services">Serviços</a>
+        <a href="#gallery">Galeria</a>
+        <a href="#faq">FAQ</a>
+        <a href="#location">Localização</a>
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Fabi.%20Gostaria%20de%20agendar%20uma%20experi%C3%AAncia%20de%20c%C3%ADlios." target="_blank" rel="noopener">WhatsApp</a>
     </div>
 
-    <section class="testimonials-section section-padding">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-subtitle">Depoimentos</span>
-                <h2 class="section-title">A Opinião de Quem Escolhe o Melhor</h2>
-            </div>
-            <div class="testimonials-slider">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <blockquote class="testimonial-quote">"Uma experiência indescritível. O atendimento é ultra personalizado e o resultado final é de uma naturalidade que eu nunca encontrei em outro lugar de São Paulo."</blockquote>
-                    <cite class="testimonial-author">— Helena Albuquerque</cite>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <blockquote class="testimonial-quote">"O estúdio parece uma clínica editorial de Paris. O cuidado com os detalhes, a leveza do toque e a durabilidade dos cílios são impecáveis."</blockquote>
-                    <cite class="testimonial-author">— Vitória Mendes</cite>
+    <main id="top">
+        <section class="hero" aria-label="Fabi Neves Lash Artist">
+            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=85&w=1800">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-getting-makeup-applied-4365-large.mp4" type="video/mp4">
+            </video>
+            <div class="hero-shade"></div>
+            <div class="hero-content">
+                <p class="eyebrow reveal-hero">Lash Artist · Granja Viana</p>
+                <h1 class="reveal-hero delay-1">O olhar como gesto de sofisticação.</h1>
+                <p class="hero-copy reveal-hero delay-2">Uma experiência reservada, precisa e silenciosamente luxuosa por Fabi Neves, dentro do Pin Up Granja Viana.</p>
+                <div class="hero-actions reveal-hero delay-3">
+                    <a class="button button-light" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Fabi.%20Gostaria%20de%20agendar%20uma%20experi%C3%AAncia%20de%20c%C3%ADlios." target="_blank" rel="noopener">Reservar horário</a>
+                    <a class="text-link light" href="#about">Conhecer o atelier</a>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="scroll-note">Scroll</div>
+        </section>
 
-    <section class="instagram-section section-padding">
-        <div class="container text-center">
-            <span class="section-subtitle">Siga Nossas Inspirações</span>
-            <h2 class="section-title mb-4">@studionouveau.sp</h2>
-            <div class="insta-grid mb-4">
-                <div class="insta-item"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=400" alt="Instagram"></div>
-                <div class="insta-item"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=400" alt="Instagram"></div>
-                <div class="insta-item"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400" alt="Instagram"></div>
-                <div class="insta-item"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=400" alt="Instagram"></div>
-            </div>
-            <a href="https://instagram.com" target="_blank" class="btn btn-secondary">Ver Instagram</a>
-        </div>
-    </section>
-
-    <section id="faq" class="faq-section section-padding">
-        <div class="container max-width-md">
-            <div class="text-center mb-5">
-                <span class="section-subtitle">Suas Dúvidas</span>
-                <h2 class="section-title">Perguntas Frequentes</h2>
-            </div>
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <button class="faq-header">Quanto tempo dura a extensão de cílios? <span class="faq-icon">+</span></button>
-                    <div class="faq-body">
-                        <p>O ciclo natural dos cílios dura entre 30 a 45 dias. Para manter a densidade perfeita e o alinhamento impecável digno do nosso estúdio, recomendamos manutenções a cada 2 ou 3 semanas.</p>
-                    </div>
+        <section id="about" class="section about">
+            <div class="container two-column">
+                <div class="portrait reveal">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&q=85&w=1200" alt="Retrato editorial de beleza premium">
                 </div>
-                <div class="faq-item">
-                    <button class="faq-header">A extensão danifica meus cílios naturais? <span class="faq-icon">+</span></button>
-                    <div class="faq-body">
-                        <p>Absolutamente não. Trabalhamos com isolamento perfeito e cálculo rigoroso de peso e espessura apropriados para cada fio natural, preservando a integridade da sua saúde ocular.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-header">Como devo me preparar para a sessão? <span class="faq-icon">+</span></button>
-                    <div class="faq-body">
-                        <p>Recomendamos comparecer à sessão com a região dos olhos completamente higienizada, livre de rímel, maquiagens oleosas ou cremes pesados.</p>
+                <div class="copy-block reveal">
+                    <p class="eyebrow">About Fabi Neves</p>
+                    <h2>Beleza não excessiva. Apenas essencial, técnica e memorável.</h2>
+                    <p>Fabi Neves desenha extensões de cílios com leitura individual de rosto, curvatura e rotina. O resultado é pensado para parecer seu: polido, leve e naturalmente marcante.</p>
+                    <div class="principles">
+                        <div><span>01</span><strong>Precisão</strong><p>Isolamento meticuloso, peso adequado e acabamento limpo.</p></div>
+                        <div><span>02</span><strong>Quiet luxury</strong><p>Uma estética discreta, sem exageros, com atmosfera clínica premium.</p></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="cta-final section-padding text-center">
-        <div class="container">
-            <h2 class="section-title mb-4">Realce sua beleza com elegância.</h2>
-            <p class="mb-4 text-muted">Vagas exclusivas e limitadas para este mês.</p>
-            <a href="https://wa.me/seunumero" class="btn btn-primary">Agendar agora</a>
-        </div>
-    </section>
+        <section id="services" class="section services">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Premium Services</p>
+                    <h2>Um menu enxuto para resultados impecáveis.</h2>
+                </div>
+                <div class="service-list">
+                    <article class="service-row reveal"><span>01</span><div><h3>Extensão Clássica Natural</h3><p>Definição delicada para realçar sem transformar a expressão.</p></div><em>2h</em></article>
+                    <article class="service-row reveal"><span>02</span><div><h3>Volume Brasileiro Soft</h3><p>Leveza, textura e presença para um olhar elegante no cotidiano.</p></div><em>2h15</em></article>
+                    <article class="service-row reveal"><span>03</span><div><h3>Volume Egípcio Signature</h3><p>Densidade refinada, construída com equilíbrio e simetria.</p></div><em>2h30</em></article>
+                    <article class="service-row reveal"><span>04</span><div><h3>Lash Lifting Premium</h3><p>Curvatura, nutrição e alinhamento dos fios naturais.</p></div><em>1h15</em></article>
+                    <article class="service-row reveal"><span>05</span><div><h3>Manutenção Curated</h3><p>Preservação da arquitetura do olhar com acabamento renovado.</p></div><em>1h30</em></article>
+                </div>
+            </div>
+        </section>
 
-    <footer class="main-footer">
+        <section id="gallery" class="section gallery">
+            <div class="container">
+                <div class="section-heading reveal"><p class="eyebrow">Before & After Gallery</p><h2>Detalhes que aparecem apenas quando tudo é preciso.</h2></div>
+                <div class="gallery-grid">
+                    <button class="gallery-card reveal" data-full="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=90&w=1400"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=85&w=700" alt="Resultado de cílios com acabamento natural"><span>Natural definition</span></button>
+                    <button class="gallery-card tall reveal" data-full="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=90&w=1400"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=85&w=700" alt="Tratamento de beleza premium"><span>Soft volume</span></button>
+                    <button class="gallery-card reveal" data-full="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=90&w=1400"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=85&w=700" alt="Detalhe editorial de maquiagem e olhar"><span>Lifted gaze</span></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonials">
+            <div class="container quote-wrap reveal">
+                <p class="eyebrow">Testimonials</p>
+                <blockquote>“A Fabi entrega aquele resultado que ninguém sabe exatamente o que mudou, mas todo mundo percebe que você está mais elegante.”</blockquote>
+                <cite>— Cliente Fabi Neves</cite>
+            </div>
+        </section>
+
+        <section id="faq" class="section faq">
+            <div class="container narrow">
+                <div class="section-heading reveal"><p class="eyebrow">FAQ</p><h2>Antes da sua sessão.</h2></div>
+                <div class="accordion reveal">
+                    <details><summary>Quanto tempo dura a extensão?</summary><p>Em média, de 3 a 5 semanas, acompanhando o ciclo natural dos fios. A manutenção ideal costuma acontecer entre 15 e 21 dias.</p></details>
+                    <details><summary>A técnica danifica os fios naturais?</summary><p>Não quando existe isolamento correto, peso adequado e aplicação individualizada. A saúde dos fios guia todo o desenho.</p></details>
+                    <details><summary>Como devo chegar ao atendimento?</summary><p>Com a região dos olhos limpa, sem máscara de cílios, maquiagem oleosa ou cremes pesados.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section id="location" class="section location">
+            <div class="container location-grid">
+                <div class="copy-block reveal">
+                    <p class="eyebrow">Studio Location</p>
+                    <h2>Pin Up Granja Viana</h2>
+                    <p>Atendimento em endereço selecionado na Granja Viana, com ambiente reservado e acesso conveniente.</p>
+                    <address>Av. São Camilo, 186<br>Granja Viana<br>Cotia - SP</address>
+                    <a class="button button-dark" href="https://www.google.com/maps/search/?api=1&query=Pin%20Up%20Granja%20Viana%20Av.%20S%C3%A3o%20Camilo%20186%20Cotia%20SP" target="_blank" rel="noopener">Abrir no Google Maps</a>
+                </div>
+                <div class="map-frame reveal" aria-label="Mapa do Pin Up Granja Viana">
+                    <iframe title="Google Maps — Pin Up Granja Viana" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Pin%20Up%20Granja%20Viana%20Av.%20S%C3%A3o%20Camilo%20186%20Cotia%20SP&output=embed"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="section instagram">
+            <div class="container insta-wrap reveal">
+                <p class="eyebrow">Instagram</p>
+                <h2>Fragmentos de textura, técnica e rotina.</h2>
+                <a class="text-link" href="https://instagram.com" target="_blank" rel="noopener">@fabineves.lashartist</a>
+            </div>
+        </section>
+
+        <section class="booking" aria-label="Agendamento pelo WhatsApp">
+            <div class="container booking-inner reveal">
+                <p class="eyebrow">Luxury WhatsApp Booking</p>
+                <h2>Reserve uma experiência pensada para o seu olhar.</h2>
+                <a class="button button-light" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Fabi.%20Gostaria%20de%20agendar%20uma%20experi%C3%AAncia%20de%20c%C3%ADlios." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox" data-lightbox aria-hidden="true"><button type="button" aria-label="Fechar galeria" data-close-lightbox>×</button><img alt="Imagem ampliada da galeria" data-lightbox-image></div>
+
+    <footer class="footer">
         <div class="container footer-grid">
-            <div class="footer-brand">
-                <h3>STUDIO NOUVEAU</h3>
-                <p>A expressão máxima do luxo e minimalismo no design do olhar.</p>
-            </div>
-            <div>
-                <h4>Contato & Redes</h4>
-                <p><a href="https://wa.me/seunumero"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
-                <p><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></p>
-            </div>
-            <div>
-                <h4>Localização</h4>
-                <p>Av. Europa, Jardins<br>São Paulo - SP</p>
-            </div>
-            <div>
-                <h4>Horários</h4>
-                <p>Seg - Sex: 09h às 20h<br>Sáb: 09h às 17h</p>
-            </div>
+            <div><strong>Fabi Neves</strong><p>Lash Artist · Granja Viana</p></div>
+            <div><span>Studio</span><p>Pin Up Granja Viana<br>Av. São Camilo, 186<br>Cotia - SP</p></div>
+            <div><span>Contato</span><a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></div>
         </div>
-        <div class="footer-bottom text-center">
-            <p>&copy; 2026 Studio Nouveau. Todos os direitos reservados. Design Editorial de Luxo.</p>
-        </div>
+        <p class="footer-bottom">© 2026 Fabi Neves. Editorial beauty experience.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
