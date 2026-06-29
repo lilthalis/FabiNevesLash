@@ -1,99 +1,67 @@
-document.addEventListener('DOMContentLoaded', () => {
+const header = document.querySelector('[data-header]');
+const menuButton = document.querySelector('[data-menu-button]');
+const mobilePanel = document.querySelector('[data-mobile-panel]');
+const revealItems = document.querySelectorAll('.reveal');
+const galleryCards = document.querySelectorAll('.gallery-card');
+const lightbox = document.querySelector('[data-lightbox]');
+const lightboxImage = document.querySelector('[data-lightbox-image]');
+const closeLightbox = document.querySelector('[data-close-lightbox]');
 
-    // 1. Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+function updateHeader() {
+    header.classList.toggle('scrolled', window.scrollY > 24);
+}
 
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            // Implementação simplificada de toggle para mobile pura
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-            if (navMenu.style.display === 'flex') {
-                navMenu.style.position = 'absolute';
-                navMenu.style.top = '100%';
-                navMenu.style.left = '0';
-                navMenu.style.width = '100%';
-                navMenu.style.flexDirection = 'column';
-                navMenu.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-                navMenu.style.padding = '20px';
-                navMenu.style.textAlign = 'center';
-            }
-        });
-    }
+window.addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();
 
-    // 2. FAQ Accordion Animation Engine
-    const faqHeaders = document.querySelectorAll('.faq-header');
+menuButton.addEventListener('click', () => {
+    const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!isOpen));
+    mobilePanel.classList.toggle('open', !isOpen);
+    header.classList.toggle('menu-open', !isOpen);
+});
 
-    faqHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const item = header.parentElement;
-            const body = item.querySelector('.faq-body');
-            const icon = header.querySelector('.faq-icon');
-            const isActive = item.classList.contains('active');
-
-            // Close all active items
-            document.querySelectorAll('.faq-item').forEach(i => {
-                i.classList.remove('active');
-                i.querySelector('.faq-body').style.maxHeight = null;
-                i.querySelector('.faq-icon').textContent = '+';
-            });
-
-            if (!isActive) {
-                item.classList.add('active');
-                body.style.maxHeight = body.scrollHeight + "px";
-                icon.textContent = '−';
-            }
-        });
+mobilePanel.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+        menuButton.setAttribute('aria-expanded', 'false');
+        mobilePanel.classList.remove('open');
+        header.classList.remove('menu-open');
     });
+});
 
-    // 3. Scroll Reveal Animation Engine (Intersection Observer)
-    const revealElements = document.querySelectorAll('.reveal');
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Deixa a animação permanente na sessão
-            }
-        });
-    }, {
-        root: null,
-        threshold: 0.15, // Ativa quando 15% do bloco aparece
-        rootMargin: "0px 0px -50px 0px"
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
     });
+}, { threshold: 0.14, rootMargin: '0px 0px -70px 0px' });
 
-    revealElements.forEach(element => {
-        revealObserver.observe(element);
-    });
+revealItems.forEach((item) => observer.observe(item));
 
-    // 4. Premium Lightbox Studio Gallery
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.querySelector('.lightbox-close');
+function openLightbox(src) {
+    lightboxImage.src = src;
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
 
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const imgSrc = item.querySelector('img').src;
-            lightboxImg.src = imgSrc;
-            lightbox.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Impede scroll ao ver foto
-        });
-    });
+function hideLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImage.removeAttribute('src');
+    document.body.style.overflow = '';
+}
 
-    if (lightboxClose) {
-        lightboxClose.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-    }
+galleryCards.forEach((card) => {
+    card.addEventListener('click', () => openLightbox(card.dataset.full));
+});
 
-    if (lightbox) {
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    }
+closeLightbox.addEventListener('click', hideLightbox);
+lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) hideLightbox();
+});
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.classList.contains('open')) hideLightbox();
 });
