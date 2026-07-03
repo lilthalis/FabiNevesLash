@@ -35,13 +35,61 @@ const imagePool = [
   'Services/micropigmentacao.webp'
 ];
 const services = [
-  ['Fio a fio clássico','Natural','Definição delicada fio a fio para realçar sem pesar.','Leveza, elegância diária, acabamento limpo','1h50'],
-  ['Volume Brasileiro','Volume','Textura marcante com densidade sofisticada e confortável.','Mais presença, efeito preenchido, fios ultraleves','2h15'],
-  ['Volume Europeu','Volume','Volume refinado com simetria e curvatura editorial.','Olhar intenso, personalização, durabilidade','2h30'],
-  ['Lash Lifting','Lifting','Curvatura dos fios naturais com aparência polida.','Sem extensão, efeito natural, manutenção simples','1h10'],
-  ['Brow Lamination','Sobrancelhas','Alinhamento premium para sobrancelhas com efeito penteado.','Fios disciplinados, volume visual, desenho moderno','1h'],
-  ['Design de sobrancelhas','Sobrancelhas','Design personalizado para harmonizar expressão e rosto.','Simetria, limpeza delicada, naturalidade','45min'],
-  ['Micropigmentação','Sobrancelhas','Preenchimento sofisticado com leitura individual de pele e formato.','Correção de falhas, praticidade, efeito elegante','2h']
+  [
+    'Fio a fio clássico',
+    'Natural',
+    'Definição delicada fio a fio para realçar sem pesar.',
+    'Leveza, elegância diária, acabamento limpo',
+    '1h50'
+  ],
+
+  [
+    'Volume Brasileiro',
+    'Volume',
+    'Textura marcante com densidade sofisticada e confortável.',
+    'Mais presença, efeito preenchido, fios ultraleves',
+    '2h15'
+  ],
+
+  [
+    'Volume Europeu',
+    'Volume',
+    'Volume refinado com simetria e curvatura editorial.',
+    'Olhar intenso, personalização, durabilidade',
+    '2h30'
+  ],
+
+  [
+    'Lash Lifting',
+    'Lifting',
+    'Curvatura dos fios naturais com aparência polida.',
+    'Sem extensão, efeito natural, manutenção simples',
+    '1h10'
+  ],
+
+  [
+    'Brow Lamination',
+    'Sobrancelhas',
+    'Alinhamento premium para sobrancelhas com efeito penteado.',
+    'Fios disciplinados, volume visual, desenho moderno',
+    '1h'
+  ],
+
+  [
+    'Design de sobrancelhas',
+    'Sobrancelhas',
+    'Design personalizado para harmonizar expressão e rosto.',
+    'Simetria, limpeza delicada, naturalidade',
+    '45min'
+  ],
+
+  [
+    'Micropigmentação',
+    'Sobrancelhas',
+    'Preenchimento sofisticado com leitura individual de pele e formato.',
+    'Correção de falhas, praticidade, efeito elegante',
+    '2h'
+  ]
 ];
 const serviceGrid = document.querySelector('[data-services]');
 services.forEach((service, index) => {
