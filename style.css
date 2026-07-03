@@ -360,22 +360,31 @@ p { color: var(--muted); font-weight: 300; letter-spacing: .018em; }
 .gallery-card:hover img { transform: scale(.988); filter: sepia(.07) saturate(.96); box-shadow: 0 30px 72px rgba(45, 42, 38, .085); }
 .gallery-card span { display: block; margin-top: 1rem; }
 
-.video-rail {
+.videos-layout {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(320px, 1fr);
-  gap: clamp(1.25rem, 2vw, 2rem);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: .8rem 0 1.6rem;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 480px);
+  gap: clamp(4rem, 8vw, 9rem);
+  align-items: center;
+}
+.video-copy { max-width: 760px; }
+.video-copy .eyebrow { margin-bottom: 2.1rem; }
+.video-copy h2 { max-width: 760px; }
+.video-copy p:not(.eyebrow) {
+  max-width: 560px;
+  margin-top: clamp(2rem, 3vw, 3rem);
+  font-size: 1.04rem;
+}
+.video-rail {
+  width: min(100%, 480px);
+  justify-self: end;
 }
 .video-rail video {
   width: 100%;
-  aspect-ratio: 9 / 14;
+  aspect-ratio: 9 / 16;
+  height: auto;
   object-fit: cover;
-  border-radius: 32px;
+  border-radius: 24px;
   filter: sepia(.15) saturate(.72) contrast(1.02);
-  scroll-snap-align: center;
   box-shadow: 0 28px 70px rgba(45, 42, 38, .09);
 }
 
@@ -530,6 +539,7 @@ address {
   .about-grid,
   .location-grid,
   .section-heading,
+  .videos-layout,
   .insta-wrap { grid-template-columns: 1fr; }
   .hero {
     gap: 4.5rem;
@@ -537,6 +547,8 @@ address {
   }
   .hero:before { display: none; }
   .hero-copy { padding-top: 0; }
+  .videos-layout { gap: 4rem; }
+  .video-rail { width: min(100%, 480px); justify-self: start; }
   .hero-portrait {
     order: -1;
     height: 56vh;
@@ -583,7 +595,9 @@ address {
   .footer-grid { grid-template-columns: 1fr; }
   .gallery-card:nth-child(n) { grid-row: auto; }
   .gallery-card:nth-child(n) img { aspect-ratio: 4 / 5; }
-  .video-rail { grid-auto-columns: minmax(260px, 84vw); }
+  .videos-layout { grid-template-columns: 1fr; gap: 3.5rem; }
+  .video-rail { width: 100%; justify-self: stretch; }
+  .video-rail video { width: 100%; }
   .timeline li { padding: 2rem 1.4rem; }
   .timeline span { margin-bottom: 3rem; }
   address { margin: 2rem 0 2.4rem; }
