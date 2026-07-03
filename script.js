@@ -117,27 +117,54 @@ function closeModal() { modal.classList.remove('open'); modal.setAttribute('aria
 document.querySelector('[data-close-modal]').addEventListener('click', closeModal);
 modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
 
-const galleryItems = [
-  ['Natural', imagePool[0]], ['Volume', imagePool[1]], ['Lifting', imagePool[2]], ['Sobrancelhas', imagePool[3]], ['Natural', imagePool[2]], ['Volume', imagePool[0]], ['Sobrancelhas', imagePool[1]], ['Lifting', imagePool[3]]
-];
 const gallery = document.querySelector('[data-gallery]');
+
+const galleryItems = [
+  ['Natural', imagePool[0]],
+  ['Volume', imagePool[1]],
+  ['Lifting', imagePool[2]],
+  ['Sobrancelhas', imagePool[3]],
+  ['Natural', imagePool[2]],
+  ['Volume', imagePool[0]],
+  ['Sobrancelhas', imagePool[1]],
+  ['Lifting', imagePool[3]]
+];
+
 function renderGallery(filter = 'all') {
+  if (!gallery) return;
+
   gallery.innerHTML = '';
-  galleryItems.filter(([category]) => filter === 'all' || category === filter).forEach(([category, src]) => {
-    const button = document.createElement('button');
-    button.className = 'gallery-card reveal visible';
-    button.innerHTML = `<img src="${src}" alt="Resultado ${category} Fabi Neves Lash"><span>${category}</span>`;
-    button.addEventListener('click', () => openLightbox(src));
-    gallery.append(button);
+
+  galleryItems
+    .filter(([category]) => filter === 'all' || category === filter)
+    .forEach(([category, src]) => {
+      const button = document.createElement('button');
+      button.className = 'gallery-card reveal visible';
+
+      button.innerHTML = `
+        <img src="${src}" alt="Resultado ${category} Fabi Neves Lash">
+        <span>${category}</span>
+      `;
+
+      button.addEventListener('click', () => openLightbox(src));
+      gallery.appendChild(button);
+    });
+}
+
+if (gallery) {
+  renderGallery();
+
+  document.querySelectorAll('[data-filter]').forEach((button) => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter]').forEach((item) => {
+        item.classList.remove('active');
+      });
+
+      button.classList.add('active');
+      renderGallery(button.dataset.filter);
+    });
   });
 }
-renderGallery();
-document.querySelectorAll('[data-filter]').forEach((button) => button.addEventListener('click', () => {
-  document.querySelectorAll('[data-filter]').forEach((item) => item.classList.remove('active'));
-  button.classList.add('active');
-  renderGallery(button.dataset.filter);
-}));
-
 const lightbox = document.querySelector('[data-lightbox]');
 const lightboxImage = document.querySelector('[data-lightbox-image]');
 function openLightbox(src) { lightboxImage.src = src; lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
