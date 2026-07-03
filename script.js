@@ -26,10 +26,13 @@ mobilePanel.querySelectorAll('a').forEach((link) => link.addEventListener('click
 }));
 
 const imagePool = [
-  'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=88&w=1100',
-  'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=88&w=1100',
-  'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=88&w=1100',
-  'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=88&w=1100'
+  'Services/fio-a-fio.webp',
+  'Services/volume-brasileiro.webp',
+  'Services/Europeu.webp',
+  'Services/lash-lifting.webp',
+  'Services/brow-lamination.webp',
+  'Services/design-sobrancelhas.webp',
+  'Services/micropigmentacao.webp'
 ];
 const services = [
   ['Fio a fio clássico','Natural','Definição delicada fio a fio para realçar sem pesar.','Leveza, elegância diária, acabamento limpo','1h50'],
