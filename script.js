@@ -5,11 +5,6 @@ const WHATSAPP_URL = `https://wa.me/5511942722631?text=${WHATSAPP_TEXT}`;
 
 document.querySelectorAll('[data-whatsapp]').forEach((link) => {
   link.href = WHATSAPP_URL;
-const whatsappText = encodeURIComponent('Olá, Fabi!\n\nConheci seu trabalho através do site e gostaria de agendar um horário.\n\nPoderia me informar a disponibilidade?');
-const whatsappUrl = `https://wa.me/5511942722631?text=${whatsappText}`;
-
-document.querySelectorAll('[data-whatsapp]').forEach((link) => {
-  link.href = whatsappUrl;
   link.target = '_blank';
   link.rel = 'noopener';
 });
@@ -97,6 +92,38 @@ if (menuButton && mobilePanel) {
     mobilePanel.classList.toggle('open', !isOpen);
     header?.classList.toggle('menu-open', !isOpen);
   });
+
+  mobilePanel.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+}
+
+const gallery = document.querySelector('[data-gallery]');
+const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+const filterButtons = Array.from(document.querySelectorAll('[data-filter]'));
+const lightbox = document.querySelector('[data-lightbox]');
+const lightboxImage = document.querySelector('[data-lightbox-image]');
+const closeLightboxButton = document.querySelector('[data-close-lightbox]');
+
+function setGalleryFilter(filter) {
+  galleryItems.forEach((item) => {
+    const shouldShow = filter === 'all' || item.dataset.category === filter;
+    item.hidden = !shouldShow;
+  });
+}
+
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach((item) => item.classList.remove('active'));
+    button.classList.add('active');
+    setGalleryFilter(button.dataset.filter || 'all');
+  });
+});
+
+function openLightbox(src, alt) {
+  if (!lightbox || !lightboxImage || !src) return;
+  lightboxImage.src = src;
+  lightboxImage.alt = alt || 'Imagem ampliada da galeria';
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
 
   mobilePanel.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
 }
