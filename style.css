@@ -228,9 +228,11 @@ p { color: var(--muted); font-weight: 400; } /* Ajustado peso para melhor leitur
   gap: clamp(2rem, 7vw, 8rem);
   align-items: center;
   padding: 88px clamp(5vw, 7vw, 9vw) 42px;
-  background: linear-gradient(90deg, var(--off), #fffaf4);
+  /* Escurece o fundo criando contraste com as letras claras do topo */
+  background: linear-gradient(rgba(26, 24, 23, 0.75), rgba(26, 24, 23, 0.4)), linear-gradient(90deg, var(--off), #fffaf4);
   position: relative;
 }
+
 
 .hero:before {
   content: '';
